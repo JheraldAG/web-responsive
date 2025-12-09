@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDS ENGLISH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="juego4.css">
+    <link rel="stylesheet" href="juego.css">
+
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><a href="https://www.upds.edu.bo/"><img src="imagenes/upds.png" alt="Logo UPDS"></a></div>
+        <input type="checkbox" id="toggle">
+        <label for="toggle"><img class="menu" src="imagenes/menu.png" alt="menu"></label>
+       <nav class="navigation">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Temas</a>
+            <ul>
+                <li><a href="tiempo-pasado.html">Unidad 1: El Pasado Simple</a></li>
+                <li><a href="unidad2.html">Unidad 2: Comparativos y Superlativos</a></li>
+                <li><a href="unidad3.html">Unidad 3: El Presente Perfecto</a></li>
+               <li><a href="unidad4.html">Unidad 4: Uso Del Futuro</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Juego</a>
+            <ul>
+                <li><a href="juego.html">Juego Unidad 1</a></li>
+                <li><a href="juego2.html">Juego Unidad 2</a></li>
+                <li><a href="juego3.html">Juego Unidad 3</a></li>
+                <li><a href="juego4.html">Juego Unidad 4</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sobre Nosotros</a>
+            <ul>
+                <li><a href="https://docs.google.com/document/d/1xURDWIrO6WWqln4SCEEJ6ffywsW8OXJPNGutwLmDpZI/edit?usp=sharing">Informe en español</a></li>
+                <li><a href="https://docs.google.com/document/d/1f0IRZFPb1-WPG-GqJ2umqncgv3-dyLUxm99dqZbsiUQ/edit?tab=t.0">Informe en Inglés</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+    </header>
+   <div class="hero">
+<main>
+<div class="quiz-container">
+    <h2>Juego de Gramática Inglesa</h2>
+    <div id="pregunta" class="pregunta"></div>
+    <div id="opciones"></div>
+    <button onclick="siguientePregunta()">Siguiente</button>
+    <div id="resultado" class="resultado"></div>
+  </div>
+</main>
+</div>
+    <footer class="footer">
+        <center>
+            <h3>Síguenos en:</h3>
+            <table border="0">
+                <tr>
+                    <td align="center">
+                        <a href="https://www.facebook.com/upds.rednacional/?locale=es_LA" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/256/124/124010.png" alt="Facebook" width="45" height="45" style="margin: 0 15px;">
+                        </a>
+                    </td>
+                    <td align="center">
+                        <a href="https://www.instagram.com/upds_santacruz/" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width="45" height="45" style="margin: 0 15px;">
+                        </a>
+                    </td>
+                    <td align="center">
+                        <a href="https://api.whatsapp.com/send/?phone=59172129166" target="_blank">
+                            <img src="imagenes/wpp.png" alt="WhatsApp" width="45" height="45" style="margin: 0 15px;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </footer>
+<script>
+    const preguntas = [
+      { pregunta: "She ___ to the store yesterday.", opciones: ["goes", "went", "gone", "going"], respuesta: "went" },
+      { pregunta: "He is ___ than his brother.", opciones: ["tall", "taller", "tallest", "more tall"], respuesta: "taller" },
+      { pregunta: "This is the ___ movie I have seen.", opciones: ["bad", "worse", "worst", "more bad"], respuesta: "worst" },
+      { pregunta: "We ___ already finished the project.", opciones: ["have", "has", "had", "will have"], respuesta: "have" },
+      { pregunta: "They ___ a new car next week.", opciones: ["buy", "bought", "have bought", "will buy"], respuesta: "will buy" },
+      { pregunta: "I ___ my homework last night.", opciones: ["do", "did", "done", "doing"], respuesta: "did" },
+      { pregunta: "She has ___ a lot this year.", opciones: ["traveled", "travel", "travels", "traveling"], respuesta: "traveled" },
+      { pregunta: "He ___ be a great doctor someday.", opciones: ["is", "was", "will", "will be"], respuesta: "will be" },
+      { pregunta: "This book is ___ than the other one.", opciones: ["interesting", "more interesting", "most interesting", "interestinger"], respuesta: "more interesting" },
+      { pregunta: "They ___ visited Paris before.", opciones: ["has", "have", "had", "having"], respuesta: "have" }
+    ];
+
+    let indice = 0;
+    let puntuacion = 0;
+
+    function mostrarPregunta() {
+      const actual = preguntas[indice];
+      document.getElementById('pregunta').textContent = actual.pregunta;
+      const opcionesDiv = document.getElementById('opciones');
+      opcionesDiv.innerHTML = '';
+      actual.opciones.forEach(op => {
+        const btn = document.createElement('button');
+        btn.textContent = op;
+        btn.onclick = () => verificarRespuesta(op);
+        opcionesDiv.appendChild(btn);
+      });
+    }
+
+    function verificarRespuesta(opcion) {
+      const correcta = preguntas[indice].respuesta;
+      if (opcion === correcta) {
+        puntuacion++;
+        document.getElementById('resultado').textContent = '✅ Correcto';
+      } else {
+        document.getElementById('resultado').textContent = `❌ Incorrecto. Respuesta correcta: ${correcta}`;
+      }
+    }
+
+    function siguientePregunta() {
+      indice++;
+      if (indice < preguntas.length) {
+        document.getElementById('resultado').textContent = '';
+        mostrarPregunta();
+      } else {
+        document.getElementById('pregunta').textContent = '🎉 Juego finalizado';
+        document.getElementById('opciones').innerHTML = '';
+        document.getElementById('resultado').textContent = `Puntuación final: ${puntuacion} de ${preguntas.length}`;
+      }
+    }
+
+    mostrarPregunta();
+  </script>
+</body>
+</html>
+

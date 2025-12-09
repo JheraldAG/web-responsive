@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px; /* espacio interno para respiración */
+    min-height: 80vh;   /* garantiza que el main tenga una buena altura visible */
+}
+
+
+section {
+    width: 600px; 
+    max-width: 90%; 
+    background-color: #fff;
+    border: 7px solid #1049eb;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section p {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0;
+}
+section input {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #1049eb;
+    border-radius: 8px;
+    width: 80%; /* ajustable según lo que prefieras */
+    max-width: 300px;
+}
+
+h2{
+    border-bottom: 1px solid #1049eb;
+    text-align: center;
+    padding-bottom: 5px;
+}
+#palabra{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+.letra{
+    height: 50px;
+    width: 50px;
+    border: 2px solid #1049eb;
+    text-align: center;
+    margin: 4px;
+    font-weight: 600;
+    font-size: 30px;
+}
+.pintar{
+    background-color: #02bfa4;;
+}
+.pintarError{
+    background-color: red;
+}
+h3{
+    margin: 4px 0;
+    font-weight: normal;
+    font-size: 16px;
+}
+h3 span{
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+button{
+    display: block;
+    width: fit-content;
+    margin: auto;
+    background-color:#02bfa4;
+    border: 2px solid #02bfa4;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: .5s;
+}
+button:hover{
+    background-color: #02bfa4;
+}

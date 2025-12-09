@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDS ENGLISH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="juego.css">
+</head>
+<body>
+<body>
+    <header class="header">
+        <div class="logo"><a href="https://www.upds.edu.bo/"><img src="imagenes/upds.png" alt="Logo UPDS"></a></div>
+        <input type="checkbox" id="toggle">
+        <label for="toggle"><img class="menu" src="imagenes/menu.png" alt="menu"></label>
+       <nav class="navigation">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Temas</a>
+            <ul>
+                <li><a href="tiempo-pasado.html">Unidad 1: El Pasado Simple</a></li>
+                <li><a href="unidad2.html">Unidad 2: Comparativos y Superlativos</a></li>
+                <li><a href="unidad3.html">Unidad 3: El Presente Perfecto</a></li>
+               <li><a href="unidad4.html">Unidad 4: Uso Del Futuro</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Juego</a>
+            <ul>
+                <li><a href="juego.html">Juego Unidad 1</a></li>
+                <li><a href="juego2.html">Juego Unidad 2</a></li>
+                <li><a href="juego3.html">Juego Unidad 3</a></li>
+                <li><a href="juego4.html">Juego Unidad 4</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Sobre Nosotros</a>
+            <ul>
+                <li><a href="https://docs.google.com/document/d/1xURDWIrO6WWqln4SCEEJ6ffywsW8OXJPNGutwLmDpZI/edit?usp=sharing">Informe en español</a></li>
+                <li><a href="https://docs.google.com/document/d/1f0IRZFPb1-WPG-GqJ2umqncgv3-dyLUxm99dqZbsiUQ/edit?tab=t.0">Informe en Inglés</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+    </header>
+   <div class="hero">
+
+<main>
+    <section>
+        <h2>Completa la forma correcta: Comparativo o Superlativo</h2>
+        <p><strong>Adjetivo base:</strong> <span id="pista"></span></p>
+	<p><strong>Frase:</strong> <span id="frase">This book is ______ than the other one.</span></p>
+        <input type="text" id="respuesta" placeholder="Escribe aquí..." />
+        <button onclick="verificarRespuesta()">Verificar</button>
+        <p id="resultado"></p>
+        <button onclick="nuevaFrase()">Nueva frase</button>
+    </section>
+</main>
+</div>
+    <footer class="footer">
+        <center>
+            <h3>Síguenos en:</h3>
+            <table border="0">
+                <tr>
+                    <td align="center">
+                        <a href="https://www.facebook.com/upds.rednacional/?locale=es_LA" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/256/124/124010.png" alt="Facebook" width="45" height="45" style="margin: 0 15px;">
+                        </a>
+                    </td>
+                    <td align="center">
+                        <a href="https://www.instagram.com/upds_santacruz/" target="_blank">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" width="45" height="45" style="margin: 0 15px;">
+                        </a>
+                    </td>
+                    <td align="center">
+                        <a href="https://api.whatsapp.com/send/?phone=59172129166" target="_blank">
+                            <img src="imagenes/wpp.png" alt="WhatsApp" width="45" height="45" style="margin: 0 15px;">
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </footer>
+
+    <script src="juego2.js"></script>
+</body>
+</html>
+
